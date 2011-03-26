@@ -1,0 +1,22 @@
+<html><head><script src="10k.js"></script></head><body onKeyPress="smash();"><center><h2>Smash Jen Barber!</h2></center><center><canvas id="it_crowd"height="750"width="800"></canvas></center><script>var pixelSize=7;var startRoyX=350;var startRoyY=100;var startJanX=550;var startJanY=300;var roy=new Array();var jan=new Array();function draw(dude)
+{for(var i=0;i<dude.length;i++)
+{switch(dude[i][2])
+{case 0:ctx.fillStyle="#000000";break;case 1:ctx.fillStyle="#F0F479";break;case 2:ctx.fillStyle="#FFFF06";break;case 3:ctx.fillStyle="#2B1955";break;case 4:ctx.fillStyle="#691C00";break;case 5:ctx.fillStyle="#2B1955";break;case 6:ctx.fillStyle="#2B1955";break;case 7:ctx.fillStyle="#FFFFFF";break;}
+ctx.strokeStyle="#91590E";ctx.strokeRect(dude[i][0],dude[i][1],pixelSize,pixelSize);ctx.fillRect(dude[i][0],dude[i][1],pixelSize,pixelSize);}};function animRoy()
+{var i=parseInt(document.getElementById("score").innerHTML);if(hHead)
+document.getElementById("score").innerHTML=i+1;roy=[];royGen();if(hHead)
+draw(jan);roysHand2Gen();draw(roy);var t=setTimeout("roysHand1Gen();ctx.clearRect(0, 0, canvas.width, canvas.height);draw(roy);",150);roy=[];royGen();};function hideHead()
+{ctx.clearRect(startJanX-20*pixelSize,startJanY-2*pixelSize,100*pixelSize,20*pixelSize);};function headRedraw()
+{t2=setTimeout("headRedraw();",50);draw(jan);};function timedCount()
+{if(hHead)
+{hideHead()
+hHead=false;clearTimeout(t2);}
+else
+{headRedraw();jansHeadGen();draw(jan);hHead=true;}
+var a=Math.round(Math.random()*3000);t1=setTimeout("timedCount()",a);};function clickev()
+{ctx.clearRect(0,0,canvas.width,canvas.height);animRoy();};function goMusic()
+{if(document.fr.go.checked)
+document.getElementById("msk").play();else
+document.getElementById("msk").pause();};function smash()
+{var keyId=event.keyCode;if(keyId==32)
+{clickev();}};var canvas=document.getElementById('it_crowd');var ctx=canvas.getContext('2d');jansHeadGen();royGen();roysHand1Gen();draw(roy);draw(jan);var t1,t2;var hHead=false;timedCount();</script><form name="fr"><input type="checkbox"name="go"value="autoplay"onClick="goMusic()"/>Music?<br/></form><div style="margin-top:-40px;margin-left:90%"><a href="http://www.channel4.com/programmes/the-it-crowd">The IT Crowd</a></div><div style="margin-top:-20px;margin-left:44%">Hits:</div><div style="margin-top:-20px;margin-left:47%"id="score">0</div><audio id="msk"src="http://dl.dropbox.com/u/6436511/it.ogg"loop="loop"></body></html>
