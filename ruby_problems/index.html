@@ -1,0 +1,1984 @@
+<html>
+  <head>
+    <script src="js/jquery-1.5.1.min.js"></script>
+    <script src="js/highlight.min.js"></script>
+    
+    <script src="js/menu.js"></script>
+    <script src="js/solution-toggler.js"></script>
+    
+    <link rel="stylesheet" href="css/dark.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22553362-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>    
+    
+  </head>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+  <body>
+    <div class="header">
+        <span class="ruby-logo">
+            <img src="img/ruby-logo.png" />
+        </span>
+        <span class="title">99 Prolog problems in <span class="ruby-text">Ruby<span></span>
+    </div>
+    
+    <div class="content">
+        <ul class="menu">
+          <li id="lists"><a href="lists.html">Lists</a></li>
+          <li id="arithmetic"><a href="arithmetic.html">Arithmetic</a></li>
+          <li id="logic"><a href="logic.html">Logic and Codes</a></li>
+          <li id="btrees"><a href="btrees.html">Binary Trees</a></li>
+          <li id="mwtrees"><a href="mwtrees.html">Multiway Trees</a></li>
+          <li id="graphs"><a href="graphs.html">Graphs</a></li>
+          <li id="misc"><a href="misc.html">Misc</a></li>
+        </ul>
+        
+        <div class="problem">
+            <div class="text">Problem 01</div>
+            <div class="task"> 1.01 (*) Find the last element of a list. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/01.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.last(list)
+      list.last
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_01.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/01'
+
+class Problem01Test < Test::Unit::TestCase
+	context "a problem 1 " do
+    setup do
+      @list = [1,2,3,4,5,6,7,8,9]
+    end
+    
+    should "find the last item from a list" do
+      assert_equal 9, Problems::List.last(@list)
+    end
+  end
+	
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 02</div>
+            <div class="task"> 1.02 (*) Find the last but one element of a list. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/02.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.last_but_one(list)
+      list[-2]
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_02.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/02'
+
+class Problem02Test < Test::Unit::TestCase
+	context "a problem 2 " do
+    setup do
+      @list = [1,2,3,4,5,6,7,8,9]
+    end
+    
+    should "find the last but one element of a list" do
+      assert_equal 8, Problems::List.last_but_one(@list)
+    end
+	end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 03</div>
+            <div class="task"> 1.03 (*) Find the K'th element of a list. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/03.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.element_at(list, k)
+      list[k-1]
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_03.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/03'
+
+class Problem03Test < Test::Unit::TestCase
+	context "a problem 3 " do	
+    setup do
+      @list = [1,2,3,4,5,6,7,8,9]
+    end
+    
+    should "find the n'th element of a list" do
+      assert_equal 2, Problems::List.element_at(@list, 2)
+    end
+	end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 04</div>
+            <div class="task"> 1.04 (*) Find the number of elements of a list.
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/04.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.size(list)
+      list.size
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_04.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/04'
+
+class Problem04Test < Test::Unit::TestCase
+	context "a problem 4 " do		
+    setup do
+      @list = [1,2,3,4,5,6,7,8,9]
+    end
+    
+    should "find the number of elements of a list" do
+      assert_equal 9, Problems::List.size(@list)
+    end
+	end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 05</div>
+            <div class="task"> 1.05 (*) Reverse a list.
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/05.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.reverse(list)
+      list.reverse
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_05.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/05'
+
+class Problem05Test < Test::Unit::TestCase
+	context "a problem 5 " do		
+    setup do
+      @list = [1,2,3,4,5,6,7,8,9]
+    end
+    
+    should "reverse a list" do
+      assert_equal [9,8,7,6,5,4,3,2,1], Problems::List.reverse(@list)
+    end
+	end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 06</div>
+            <div class="task"> 1.06 (*) Find out whether a list is a palindrome. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/06.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.palindrome?(list)
+      list == list.reverse
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_06.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/06'
+
+class Problem06Test < Test::Unit::TestCase
+	context "a problem 6 " do			
+    setup do
+      @list = [1,2,3,4,4,3,2,1]
+    end
+    
+    should "find out whether a list is a palindrome" do
+      assert_equal true, Problems::List.palindrome?(@list)
+    end
+	end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 07</div>
+            <div class="task"> 1.07 (**) Flatten a nested list structure. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/07.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.flatten(list)
+      list.flatten
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_07.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/07'
+
+class Problem07Test < Test::Unit::TestCase
+	context "a problem 7 " do	
+    setup do
+      @list =[1, [2, [3, 4], 5]]
+    end
+    
+    should "flatten a nested list structure" do
+      assert_equal [1,2,3,4,5], Problems::List.flatten(@list)
+    end
+	end
+end
+
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 08</div>
+            <div class="task"> 1.08 (**) Eliminate consecutive duplicates of list elements. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/08.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.compress(list)
+      list.chunk{|x| x}.map(&:first)
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_08.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/08'
+
+class Problem08Test < Test::Unit::TestCase
+	context "a problem 8 " do		
+    setup do
+      @list = [1,1,1,1,2,2,2,3,7,3,3,2,2,5,5,6]
+    end
+    
+    should "eliminate consecutive duplicates of list elements" do
+      assert_equal [1,2,3,7,3,2,5,6], Problems::List.compress(@list)
+    end
+	end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 09</div>
+            <div class="task"> 1.09 (**) Pack consecutive duplicates of list elements into sublists. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/09.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.pack(list)     
+      pack_list = []
+      sub_list=[]    
+      list.each_index do |i| 
+        sub_list << list[i]
+        unless list[i] == list[i+1]
+          pack_list << sub_list
+          sub_list = []
+        end
+      end
+      pack_list
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_09.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/09'
+
+class Problem09Test < Test::Unit::TestCase
+	context "a problem 9 " do		
+    setup do
+      @list = [1,1,1,1,2,3,3,1,1,4,5,5,5,5]
+    end
+    
+    should "pack consecutive duplicates of list elements into sublists" do
+      assert_equal [[1,1,1,1],[2],[3,3],[1,1],[4],[5,5,5,5]], Problems::List.pack(@list)
+    end
+	end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 10</div>
+            <div class="task"> 1.10 (*) Run-length encoding of a list. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/10.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.encode(list)
+      pack_list = []
+      sub_list=[]    
+      list.each_index do |i| 
+        sub_list << list[i]
+        unless list[i] == list[i+1]
+          pack_list << sub_list
+          sub_list = []
+        end
+      end
+      pack_list.map {|i| [i.size, i.first]}
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_10.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/10'
+
+class Problem10Test < Test::Unit::TestCase
+	context "a problem 10 " do		
+    setup do
+      @list = [1,1,1,1,2,3,3,1,1,4,5,5,5,5]
+    end
+    
+    should "encode as terms [N,E] where N is the number of duplicates of the element E." do
+      assert_equal [[4,1],[1,2],[2,3],[2,1],[1,4],[4,5]], Problems::List.encode(@list)
+    end
+	end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 11</div>
+            <div class="task"> 1.11 (*) Modified run-length encoding. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/11.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.encode_modified(list)
+      pack_list = []
+      sub_list=[]    
+      list.each_index do |i| 
+        sub_list << list[i]
+        unless list[i] == list[i+1]
+          pack_list << sub_list
+          sub_list = []
+        end
+      end
+      pack_list.map do |i| 
+        if i.size == 1
+          i.first
+        else
+          [i.size, i.first]
+        end
+      end
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_11.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/11'
+
+class Problem11Test < Test::Unit::TestCase
+	context "a problem 11 " do		
+    setup do
+      @list = [1,1,1,1,2,3,3,1,1,4,5,5,5,5]
+    end
+    
+    should "encode as terms [N,E] where N is the number of duplicates of the element E. Only elements with duplicates are transferred as [N,E] terms" do
+      assert_equal [[4,1],2,[2,3],[2,1],4,[4,5]], Problems::List.encode_modified(@list)
+    end
+	end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 12</div>
+            <div class="task"> 1.12 (**) Decode a run-length encoded list. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/12.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.decode_modified(list)
+      list.inject([]) do |flat_list, e| 
+        if e.is_a? Array
+          flat_list +=  [e[1]]*e[0]
+        else
+          flat_list << e
+        end
+      end
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_12.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/12'
+
+class Problem12Test < Test::Unit::TestCase
+	context "a problem 12 " do		
+    setup do
+      @list = [[4,1],2,[2,3],[2,1],4,[4,5]]
+    end
+    
+    should "decode a run-length encoded list" do
+      assert_equal [1,1,1,1,2,3,3,1,1,4,5,5,5,5], Problems::List.decode_modified(@list)
+    end
+	end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 13</div>
+            <div class="task"> 1.13 (**) Run-length encoding of a list (direct solution). 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/13.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.encode_direct(list)
+      #TODO
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_13.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/13'
+
+class Problem13Test < Test::Unit::TestCase
+	context "a problem 13 " do		
+    setup do
+      @list = [1,1,1,1,2,3,3,1,1,4,5,5,5,5]
+    end
+    
+    should "encode as terms [N,E] where N is the number of duplicates of the element E. Only elements with duplicates are transferred as [N,E] terms" do
+      assert true
+    end
+	end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 14</div>
+            <div class="task"> 1.14 (*) Duplicate the elements of a list. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/14.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.duplicate(list)
+	    list.inject([]) {|dupli_list, e| dupli_list + [e] * 2}
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_14.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/14'
+
+class Problem14Test < Test::Unit::TestCase
+	context "a problem 14 " do		
+    setup do
+      @list = [1,2,3,4,5]
+    end
+    
+    should "duplicate the elements of a list" do
+      assert_equal [1,1,2,2,3,3,4,4,5,5], Problems::List.duplicate(@list)
+    end
+	end
+end
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 15</div>
+            <div class="task"> 1.15 (**) Duplicate the elements of a list a given number of times. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/15.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.duplicate_times(list, n)
+	    list.inject([]) {|dupli_list, e| dupli_list + [e] * n}
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_15.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/15'
+
+class Problem15Test < Test::Unit::TestCase
+	context "a problem 15 " do		
+    setup do
+      @list = [1,2,3,4,5]
+    end
+    
+    should "duplicate the elements of a list a given number of times." do
+      assert_equal [1,1,2,2,3,3,4,4,5,5] , Problems::List.duplicate_times(@list, 2)
+    end
+	end
+end
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 16</div>
+            <div class="task"> 1.16 (**) Drop every N'th element from a list. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/16.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.drop(list, n)
+	    list.delete_if {|e| list.index(e).succ.modulo(n).zero? }
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_16.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/16'
+
+class Problem16Test < Test::Unit::TestCase
+	context "a problem 16 " do		
+    setup do
+      @list = [1,2,3,4,5,6,7,8,9]
+    end
+    
+    should "drop every n'th element from a list" do
+      assert_equal [1,2,4,5,7,8] , Problems::List.drop(@list, 3)
+    end
+	end
+end
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 17</div>
+            <div class="task"> 1.17 (*) Split a list into two parts; the length of the first part is given. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/17.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.split(list, size)
+      [list.slice!(0, size), list]
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_17.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/17'
+
+class Problem17Test < Test::Unit::TestCase
+	context "a problem 17 " do		
+    setup do
+      @list = [1,2,3,4,5,6,7]
+    end
+    
+    should "split a list into two parts" do
+      assert_equal [[1,2,3],[4,5,6,7]] , Problems::List.split(@list, 3)
+    end
+	end
+end 
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 18</div>
+            <div class="task"> 1.18 (**) Extract a slice from a list. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/18.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.slice(list, start, n)
+	    list.slice(start-1, n)
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_18.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/18'
+
+class Problem18Test < Test::Unit::TestCase
+	context "a problem 18 " do		
+    setup do
+      @list = [1,2,3,4,5,6,7,8,9,10]
+    end
+    
+    should "extract a slice from a list" do
+      assert_equal [3,4,5,6,7] , Problems::List.slice(@list, 3, 5)
+    end
+	end
+end 
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 19</div>
+            <div class="task"> 1.19 (**) Rotate a list N places to the left. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/19.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.rotate(list, n)
+	    list.rotate(n)
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_19.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/19'
+
+class Problem19Test < Test::Unit::TestCase
+	context "a problem 19 " do		
+    setup do
+      @list = [1,2,3,4,5,6,7,8]
+    end
+    
+    should "rotate a list N places to the left" do
+      assert_equal [4,5,6,7,8,1,2,3] , Problems::List.rotate(@list, 3)
+    end
+	end
+end 
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 20</div>
+            <div class="task"> 1.20 (*) Remove the K'th element from a list. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/20.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.remove_at(list, n)
+	    list.delete_at(n-1)
+	    list
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_20.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/20'
+
+class Problem20Test < Test::Unit::TestCase
+	context "a problem 20 " do		
+    setup do
+      @list = [1,2,3,4,5]
+    end
+    
+    should "remove the n'th element from a list" do
+      assert_equal [1,2,4,5], Problems::List.remove_at(@list, 3)
+    end
+	end
+end 
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 21</div>
+            <div class="task"> 1.21 (*) Insert an element at a given position into a list. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/21.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.insert_at(item, list, i)
+	    list.insert(i-1, item)
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_21.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/21'
+
+class Problem21Test < Test::Unit::TestCase
+	context "a problem 21 " do		
+    setup do
+      @list = [1,2,3,4,5]
+    end
+    
+    should "insert an element at a given position into a list" do
+      assert_equal [1,2,0,3,4,5], Problems::List.insert_at(0, @list, 3)
+    end
+	end
+end 
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 22</div>
+            <div class="task"> 1.22 (*) Create a list containing all integers within a given range. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/22.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.range(first, last)
+	    (first..last).to_a
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_22.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/22'
+
+class Problem22Test < Test::Unit::TestCase
+	context "a problem 22 " do		
+    should "create a list containing all integers within a given range" do
+      assert_equal [4,5,6,7,8,9], Problems::List.range(4, 9)
+    end
+	end
+end 
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 23</div>
+            <div class="task"> 1.23 (**) Extract a given number of randomly selected elements from a list. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/23.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.rnd_select(list, n)
+	    list.shuffle[0...n]
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_23.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/23'
+
+class Problem23Test < Test::Unit::TestCase
+	context "a problem 23 " do		
+    setup do
+      @list = [1,2,3,4,5]
+    end
+    
+    should "extract a given number of randomly selected elements from a list" do
+      assert_equal true, Problems::List.rnd_select(@list, 3).is_a?(Array)
+    end
+	end
+end 
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 24</div>
+            <div class="task"> 1.24 (*) Lotto: Draw N different random numbers from the set 1..M. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/24.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.rnd_select2(last, n)
+      (1...last).to_a.shuffle[0...n]
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_24.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/24'
+
+class Problem24Test < Test::Unit::TestCase
+	context "a problem 24 " do		
+    should "draw N different random numbers from the set 1..M" do
+      rnd = Problems::List.rnd_select2(9, 3)
+      assert_equal rnd.uniq, rnd
+      assert_equal rnd.size, 3
+    end
+	end
+end 
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 25</div>
+            <div class="task"> 1.25 (*) Generate a random permutation of the elements of a list. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/25.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.rnd_permut(list)
+	    list.shuffle
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_25.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/25'
+
+class Problem25Test < Test::Unit::TestCase
+	context "a problem 25 " do		
+    setup do
+      @list = [1,2,3,4,5]
+    end
+    
+    should "generate a random permutation of the elements of a list" do
+      assert_equal true, Problems::List.rnd_permut(@list).is_a?(Array)
+    end
+	end
+end 
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 26</div>
+            <div class="task"> 1.26 (**) Generate the combinations of K distinct objects chosen from the N elements of a list 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/26.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.combination(list, n)
+	    list.permutation(n).to_a
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_26.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/26'
+
+class Problem26Test < Test::Unit::TestCase
+	context "a problem 26 " do		
+    setup do
+      @list = [1,2,3]
+    end
+    
+    should "generate a random permutation of the elements of a list" do
+      assert_equal [[1,2], 
+                    [1,3], 
+                    [2,1], 
+                    [2,3],
+                    [3,1], 
+                    [3,2]], Problems::List.combination(@list, 2)
+    end
+	end
+end 
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 27</div>
+            <div class="task"> 1.27 (**) Group the elements of a set into disjoint subsets. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/27.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+    def self.group(list, groups)
+      groups.sort!
+      list.combination(groups[2]).zip(list.combination(groups[1]), list.combination(groups[0]))
+    end 
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_27.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/27'
+
+class Problem27Test < Test::Unit::TestCase
+	context "a problem 27 " do		
+    setup do
+      @list = [1,2,3,4,5]
+    end
+    
+    should "group the elements of a set into disjoint subsets" do
+      #TODO
+    end
+	end
+end 
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 28</div>
+            <div class="task"> 1.28 (**) Sorting a list of lists according to length of sublists 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/lists/28.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module List
+		def self.lsort(list)
+			list.sort_by {|e| e.size}
+		end
+		
+		def self.lfsort(list)
+			list_of_sizes = list.map {|e| e.size}
+			list.sort_by {|e| list_of_sizes.count(e.size)}
+		end
+	end
+end	
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/lists_test/test_28.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'lists/28'
+
+class Problem28Test < Test::Unit::TestCase
+	context "a problem 28 " do		
+    setup do
+      @list = [['a','b','c'],['d','e'],['f','g','h'],['d','e'],['i','j','k','l'],['m','n'],['o']] 
+    end
+    
+    should "sort a list of lists according to length of sublists" do
+      assert_equal [['o'], ['d', 'e'], ['m', 'n'], ['d', 'e'], ['a', 'b', 'c'], ['f', 'g', 'h'], ['i', 'j', 'k', 'l']], Problems::List.lsort(@list)
+    end
+		
+		should "sort a list of lists according to their length frequency" do
+			assert_equal [['o'], ['i', 'j', 'k', 'l'], ['f', 'g', 'h'], ['a', 'b', 'c'], ['d', 'e'], ['m', 'n'], ['d', 'e']], Problems::List.lfsort(@list)
+		end
+		
+	end
+end 
+
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+    </div>   
+  </body>
+</html>
