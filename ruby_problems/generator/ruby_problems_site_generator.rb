@@ -64,5 +64,5 @@ class RubyProblemsSiteGenerator
     
 end
 
-g = RubyProblemsSiteGenerator.new("D:\\Programming\\MyProgramming\\ruby_kick_prologs_ass\\problems", "D:\\Programming\\MyProgramming\\ruby_kick_prologs_ass\\test", "D:\\Programming\\MyProgramming\\ruby_problems_site_generator\\template.eruby", "D:\\Programming\\MyProgramming\\ruby_problems_site_generator")
+g = RubyProblemsSiteGenerator.new("D:\\Programming\\MyProgramming\\ruby_kick_prologs_ass\\problems", "D:\\Programming\\MyProgramming\\ruby_kick_prologs_ass\\test", "D:\\Programming\\MyProgramming\\ruby_problems_site_generator\\template.eruby", "D:\\Programming\\MyProgramming\\nashby.github.com\\ruby_problems")
 g.generate
