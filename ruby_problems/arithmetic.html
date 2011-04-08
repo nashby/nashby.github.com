@@ -1,0 +1,698 @@
+<html>
+  <head>
+    <script src="js/jquery-1.5.1.min.js"></script>
+    <script src="js/highlight.min.js"></script>
+    
+    <script src="js/menu.js"></script>
+    <script src="js/solution-toggler.js"></script>
+    
+    <link rel="stylesheet" href="css/dark.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22553362-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>    
+    
+  </head>
+  <script>
+    hljs.tabReplace = '    ';
+    hljs.initHighlightingOnLoad();
+  </script>
+  <body>
+    <div class="header">
+        <span class="ruby-logo">
+            <img src="img/ruby-logo.png" />
+        </span>
+        <span class="title">99 Prolog problems in <span class="ruby-text">Ruby<span></span>
+    </div>
+    
+    <div class="content">
+        <ul class="menu">
+          <li id="lists"><a href="lists.html">Lists</a></li>
+          <li id="arithmetic"><a href="arithmetic.html">Arithmetic</a></li>
+          <li id="logic"><a href="logic.html">Logic and Codes</a></li>
+          <li id="btrees"><a href="btrees.html">Binary Trees</a></li>
+          <li id="mwtrees"><a href="mwtrees.html">Multiway Trees</a></li>
+          <li id="graphs"><a href="graphs.html">Graphs</a></li>
+          <li id="misc"><a href="misc.html">Misc</a></li>
+        </ul>
+        
+        <div class="problem">
+            <div class="text">Problem 01</div>
+            <div class="task"> 2.01 (**) Determine whether a given integer number is prime. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/arithmetic/01.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">require 'prime'
+module Problems
+    module Arithmetic
+        def self.is_prime?(n)
+            Prime.prime?(n)
+        end
+    end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/arithmetic_test/test_01.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'arithmetic/01'
+
+class Problem01Test < Test::Unit::TestCase
+	context "a problem 1 " do
+    should "be a prime" do
+      assert_equal true, Problems::Arithmetic.is_prime?(5)
+    end
+    should "not be a prime" do
+      assert_equal false, Problems::Arithmetic.is_prime?(4)
+    end
+  end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 02</div>
+            <div class="task"> 2.02 (**) Determine the prime factors of a given positive integer. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/arithmetic/02.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">require 'prime'
+module Problems
+    module Arithmetic
+      def self.prime_factors(n)
+        Prime.prime_division(n).map {|e| [e[0]]*e[1]}.flatten
+      end
+    end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/arithmetic_test/test_02.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'arithmetic/02'
+
+class Problem02Test < Test::Unit::TestCase
+	context "a problem 2 " do
+    should "determine the prime factors of a given positive integer" do
+      assert_equal [3,3,5,7], Problems::Arithmetic.prime_factors(315)
+    end
+  end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 03</div>
+            <div class="task"> 2.03 (**) Determine the prime factors of a given positive integer (2). 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/arithmetic/03.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">require 'prime'
+module Problems
+    module Arithmetic
+      def self.prime_factors_mult(n)
+        Prime.prime_division(n)
+      end
+    end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/arithmetic_test/test_03.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'arithmetic/03'
+
+class Problem03Test < Test::Unit::TestCase
+	context "a problem 3 " do
+    should "determine the prime factors of a given positive integer" do
+      assert_equal [[3,2],[5,1],[7,1]], Problems::Arithmetic.prime_factors_mult(315)
+    end
+  end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 04</div>
+            <div class="task"> 2.04 (*) A list of prime numbers. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/arithmetic/04.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+    module Arithmetic
+      def self.primes(first, last)
+        Prime.each(last).select {|prime| prime > first}
+      end
+    end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/arithmetic_test/test_04.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'arithmetic/04'
+
+class Problem04Test < Test::Unit::TestCase
+	context "a problem 4 " do
+    should "return a list of prime numbers." do
+      assert_equal [5,7,11,13], Problems::Arithmetic.primes(4,15)
+    end
+  end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 05</div>
+            <div class="task"> 2.05 (**) Goldbach's conjecture. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/arithmetic/05.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+    module Arithmetic
+      def self.goldbach(n)
+        Prime.each(n).map { |prime|
+          [prime, n-prime] if Prime.prime? n-prime and n-prime > prime
+        }.compact
+      end
+    end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/arithmetic_test/test_05.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'arithmetic/05'
+
+class Problem05Test < Test::Unit::TestCase
+	context "a problem 5 " do
+    should "return goldbach's conjecture" do
+      assert_equal [[5,23], [11,17]], Problems::Arithmetic.goldbach(28)
+    end
+  end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 06</div>
+            <div class="task"> 2.06 (**) A list of Goldbach compositions. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/arithmetic/06.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module Arithmetic
+    def self.goldbach_list(first, last)
+      goldbach_list = []
+      first.upto(last) do |n|
+        if n.even?
+          primes = []
+          Prime.each(n) {|e| primes << e}
+          goldbach_nums = []
+          primes.each do |p|
+            if primes.include?(n-p)
+              goldbach_nums = [n, p, n-p] 
+              break
+            end
+          end
+          goldbach_list << goldbach_nums
+        end
+      end
+      goldbach_list
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/arithmetic_test/test_06.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'arithmetic/06'
+
+class Problem06Test < Test::Unit::TestCase
+	context "a problem 6 " do
+    should "return a list of Goldbach compositions" do
+      assert_equal [[10,3,7], [12,5,7], [14,3,11], [16,3,13], [18,5,13], [20,3,17]], Problems::Arithmetic.goldbach_list(9, 20)
+    end
+  end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 07</div>
+            <div class="task"> 2.07 (**) Determine the greatest common divisor of two positive integer numbers. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/arithmetic/07.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module Arithmetic
+    def self.gcd(n1, n2)
+      n1.gcd(n2)
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/arithmetic_test/test_07.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'arithmetic/07'
+
+class Problem07Test < Test::Unit::TestCase
+	context "a problem 7 " do
+    should "determine the greatest common divisor of two positive integer numbers" do
+      assert_equal 9, Problems::Arithmetic.gcd(36, 63)
+    end
+  end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 08</div>
+            <div class="task"> 2.08 (*) Determine whether two positive integer numbers are coprime. 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/arithmetic/08.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module Arithmetic
+    def self.coprime(n1, n2)
+      n1.gcd(n2) == 1
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/arithmetic_test/test_08.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'arithmetic/08'
+
+class Problem08Test < Test::Unit::TestCase
+	context "a problem 8 " do
+    should "determine whether two positive integer numbers are coprime" do
+      assert_equal true, Problems::Arithmetic.coprime(35, 64)
+      assert_equal false, Problems::Arithmetic.coprime(35, 65)
+    end
+  end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 09</div>
+            <div class="task"> 2.09 (**) Calculate Euler's totient function phi(m). 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/arithmetic/09.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">module Problems
+  module Arithmetic
+    def self.totient_phi(m)
+      (1..m).inject([]) {|phi, n| phi << n if m.gcd(n) == 1; phi.size}
+    end
+  end
+end
+
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/arithmetic_test/test_09.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'arithmetic/09'
+
+class Problem09Test < Test::Unit::TestCase
+	context "a problem 9 " do
+    should "calculate Euler's totient function phi(m)" do
+      assert_equal 4, Problems::Arithmetic.totient_phi(10)
+    end
+  end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+        <div class="problem">
+            <div class="text">Problem 10</div>
+            <div class="task"> 2.10 (**) Calculate Euler's totient function phi(m) (2). 
+</div>
+            <div class="toolbar">
+                <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                <span class="text">Solution</span>
+                <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/problems/arithmetic/10.rb">download</a></span>
+            </div>
+            <div class="code">
+                <div class="container">
+                  <div class="wrapper"> 
+                    <div class="ruby-code">
+                      <pre>
+                        <code class="ruby">require 'prime'
+module Problems
+  module Arithmetic
+    def self.totient_phi2(m)
+      Prime.prime_division(m).inject(1) {|phi, e| phi *= (e[0]-1)*e[0]**(e[1]-1); phi}
+    end
+  end
+end
+                        </code>
+                      </pre> 
+                    </div>
+                    <div class="helper"></div> 
+                    <div class="fade"></div> 
+                  </div> 
+                </div>             
+            </div>
+            <div class="problem-test">
+                <div class="toolbar">
+                    <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
+                    <span class="text">Test</span>
+                    <span class="download-link"><a href="https://github.com/nashby/ruby_kick_prologs_ass/raw/master/test/arithmetic_test/test_10.rb">download</a></span>
+                </div>
+                <div class="code">
+                    <div class="container">
+                      <div class="wrapper"> 
+                        <div class="ruby-code">
+                          <pre>
+                            <code class="ruby">require 'test_helper'
+require 'arithmetic/10'
+
+class Problem10Test < Test::Unit::TestCase
+	context "a problem 10 " do
+    should "calculate Euler's totient function phi(m)" do
+      assert_equal 4, Problems::Arithmetic.totient_phi2(10)
+    end
+  end
+end
+                            
+                        </code>
+                          </pre> 
+                        </div>
+                        <div class="helper"></div> 
+                        <div class="fade"></div> 
+                      </div> 
+                    </div>             
+                </div>  
+            </div>            
+            
+        </div>
+    </div>   
+  </body>
+</html>

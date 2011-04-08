@@ -1,0 +1,123 @@
+    body {
+        font-family: "Arial";
+    }
+    .header .title {
+        position: absolute;
+        padding-top: 50px;
+        padding-left: 80px;
+        font-size: 20px;
+    }
+    .ruby-logo {
+        padding-left: 30px;
+    }
+    .header {
+        position: relative;
+    }
+    .ruby-text {
+        color: #955044;
+    }
+    .menu {
+        list-style-type: none;
+        padding-top: 50px;
+        padding-left: 0px;
+        margin-left: -10px;
+        position: absolute;
+    }
+    .menu li {
+        margin-top: 12px;    
+        padding-left: 40px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #FFFFFF;
+        border-left: none;
+    }
+    .menu a {
+        text-decoration:  none;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .menu a:visited, a:link {
+        color: black;
+    }          
+  
+    .menu .current {
+        -moz-border-radius-bottomright: 50px;
+        border-radius: 0px 20px 20px 0px;
+        border-style: solid;
+        border-color: #955044;
+        border-width: 2px;
+        border-left: none;
+    }    
+    
+    .problem {
+        padding-left: 270px;
+        padding-top: 30px;   
+    }     
+    .problem .text {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .problem .task {
+        padding-left: 20px;
+    }
+    .problem .toolbar {
+        padding-top: 20px;
+    }   
+    .toolbar .toggle-button {
+        margin-bottom: -2px;
+    }    
+    
+    .problem .toolbar .download-link {
+        padding-left: 343px;        
+    }
+
+    .problem-test .toolbar .download-link {
+        padding-left: 373px;        
+    }        
+
+    .problem .toolbar .download-link a {
+        color: #BA5234;    
+        text-decoration:  none;        
+    }    
+    .problem .toolbar .download-link a:hover {
+        color: #EF9E87;    
+    }
+    .problem-test .toolbar .download-link a {
+        color: #BA5234;    
+        text-decoration:  none; 
+    }      
+    .problem-test .toolbar .download-link a:hover {
+        color: #EF9E87;
+    }   
+    .code {
+        width: 510px;
+    }
+    .container {
+        min-width: 510px;
+        height: 50px;
+        overflow-y: hidden;
+    }
+    .wrapper {
+        position: relative;
+        min-width: 510px;
+        height: 100%;
+        overflow:hidden;
+    }
+    .container .ruby-code {
+        float: left;
+        min-width: 510px;
+        margin-top: -15px;        
+    }
+    .container .ruby-code pre {
+        margin: 0px;       
+    }
+    .helper {
+        height: 100%;
+    }
+    .fade {
+      width:100%;
+      position:absolute;        
+      top:0; left:0;
+      height: 60px;
+      background: url(../img/fade.png) 0px 0px repeat-x;
+    }
