@@ -241,7 +241,8 @@
         </div>
         <div class="problem">
             <div class="text">Problem 05</div>
-            <div class="task"></div>
+            <div class="task"> 7.05 (**) English number words
+</div>
             <div class="toolbar">
                 <span><a class="close-link" href="javascript:void(0)" ><img class="toggle-button" src="img/arrow_close.png" /></a></span>
                 <span class="text">Solution</span>
@@ -252,8 +253,23 @@
                   <div class="wrapper"> 
                     <div class="ruby-code">
                       <pre>
-                        <code class="ruby">not yet implemented :( 
- Fork it - <a href='https://github.com/nashby/ruby_kick_prologs_ass' style='color:#FFFFFF'>https://github.com/nashby/ruby_kick_prologs_ass</a>
+                        <code class="ruby">module Problems
+  module Misc
+    def self.full_words(number)
+      digits = {0 => "zero",
+                   1 => "one", 
+                   2 => "two",
+                   3 => "three",
+                   4 => "four",
+                   5 => "five",
+                   6 => "six",
+                   7 => "seven",
+                   8 => "eight",
+                   9 => "nine"}
+      number.to_s.split(//).map{|digit| digits[digit.to_i]}.join("-")
+    end
+  end
+end
                         </code>
                       </pre> 
                     </div>
@@ -273,8 +289,17 @@
                       <div class="wrapper"> 
                         <div class="ruby-code">
                           <pre>
-                            <code class="ruby">not yet implemented :( 
- Fork it - <a href='https://github.com/nashby/ruby_kick_prologs_ass' style='color:#FFFFFF'>https://github.com/nashby/ruby_kick_prologs_ass</a>
+                            <code class="ruby">require 'test_helper'
+require 'misc/05'
+
+class Problem05Test < Test::Unit::TestCase
+	context "a problem 5 " do
+    should "print (non-negative) integer numbers in full words" do
+      assert_equal "one-seven-five", Problems::Misc.full_words(175)
+      assert_equal "zero", Problems::Misc.full_words(0)
+    end
+  end
+end
                             
                         </code>
                           </pre> 
